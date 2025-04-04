@@ -1,6 +1,7 @@
 pub type Glyph = [u8; 16];
 
 // https://www.inp.nsk.su./~bolkhov/files/fonts/univga/
+#[rustfmt::skip]
 pub const DEFAULT_ASCII_FONT: [Glyph; 128] = [
     // 0x00
     [
