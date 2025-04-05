@@ -4,25 +4,33 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-limine = "0.2.0"
-log = "0.4.21"
-x86_64 = "0.15.1"
-spin = "0.9.8"
-pic8259 = "0.11.0"
-bitflags = "2.5.0"
-snafu = { version = "0.8.2", default-features = false, features = ["rust_1_61", "rust_1_65", "unstable-core-error"] }
-linked_list_allocator = "0.10.5"
+common = { path = "../common" }
+
+log = "0.4.27"
+snafu = { version = "0.8.5", default-features = false, features = ["rust_1_81"] }
+
+bitfield-struct = "0.10.1"
+bitflags = "2.9.0"
+
+spin = "0.10.0"
+
+phf = { version = "0.11.3", default-features = false, features = ["macros"] }
+
 deku = { version = "0.16.0", default-features = false, features = ["alloc", "const_generics"] }
-raw-cpuid = "11.0.1"
-volatile = "0.5.2"
-libm = "0.2.8"
-aml = "0.16.4"
-bitfield-struct = "0.6.1"
-bytemuck = "1.16.0"
-goblin = { version = "0.8.2", default-features = false, features = ["alloc", "elf32", "elf64", "endian_fd"] }
-common = { version = "0.1.0", path = "../common" }
+goblin = { version = "0.9.3", default-features = false, features = ["alloc", "elf32", "elf64", "endian_fd"] }
+
+libm = { version = "0.2.11", default-features = false }
+
+x86_64 = "0.15.2"
+raw-cpuid = "11.5.0"
+
+linked_list_allocator = "0.10.5"
+
+pic8259 = { version = "0.11.0", default-features = false }
+
+limine = { version = "0.4.0", default-features = false }
+
 acpica-rs = { git = "https://github.com/moose-os/acpica-rs" }
-phf = { version = "0.11", features = ["macros"], default-features = false }
 
 [profile.dev]
 opt-level = 1

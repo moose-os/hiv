@@ -29,19 +29,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aml"
-version = "0.16.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c4f8cba7d4260ea05671dda81029f6f718b54402a4ec926a0d9a41bdbb96b415"
-dependencies = [
- "bit_field",
- "bitvec",
- "byteorder",
- "log",
- "spinning_top",
-]
-
-[[package]]
 name = "autocfg"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -75,9 +62,9 @@ checksum = "dc827186963e592360843fb5ba4b973e145841266c1357f7180c43526f2e5b61"
 
 [[package]]
 name = "bitfield-struct"
-version = "0.6.2"
+version = "0.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "adc0846593a56638b74e136a45610f9934c052e14761bebca6b092d5522599e3"
+checksum = "2be5a46ba01b60005ae2c51a36a29cfe134bcacae2dd5cedcd4615fbaad1494b"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -101,18 +88,6 @@ dependencies = [
  "tap",
  "wyz",
 ]
-
-[[package]]
-name = "bytemuck"
-version = "1.22.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b6b1fc10dbac614ebc03540c9dbd60e83887fda27794998c6528f1782047d540"
-
-[[package]]
-name = "byteorder"
-version = "1.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b"
 
 [[package]]
 name = "cexpr"
@@ -227,9 +202,9 @@ checksum = "a8d1add55171497b4705a648c6b583acafb01d58050a51727785f0b2c8e0a2b2"
 
 [[package]]
 name = "goblin"
-version = "0.8.2"
+version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1b363a30c165f666402fe6a3024d3bec7ebc898f96a4a23bd1c99f8dbf3f4f47"
+checksum = "daa0a64d21a7eb230583b4c5f4e23b7e4e57974f96620f42a7e75e08ae66d745"
 dependencies = [
  "log",
  "plain",
@@ -262,10 +237,8 @@ name = "kernel"
 version = "0.1.0"
 dependencies = [
  "acpica-rs",
- "aml",
  "bitfield-struct",
  "bitflags",
- "bytemuck",
  "common",
  "deku",
  "goblin",
@@ -278,7 +251,6 @@ dependencies = [
  "raw-cpuid",
  "snafu",
  "spin",
- "volatile 0.5.4",
  "x86_64",
 ]
 
@@ -306,9 +278,9 @@ checksum = "8355be11b20d696c8f18f6cc018c4e372165b1fa8126cef092399c9951984ffa"
 
 [[package]]
 name = "limine"
-version = "0.2.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "846c87e24d089e8717a61098cba72b378e3525c46a87cf75b71352dcf668e68c"
+checksum = "6e6cb7fd182815ec1ea9e26061418ac37c3eebea47a14e773c563533f277bcef"
 dependencies = [
  "bitflags",
 ]
@@ -334,9 +306,9 @@ dependencies = [
 
 [[package]]
 name = "log"
-version = "0.4.26"
+version = "0.4.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "30bde2b3dc3671ae49d8e2e9f044c7c005836e7a023ee57cffa25ab82764bb9e"
+checksum = "13dc2df351e3202783a1fe0d44375f7295ffb4049267b0f3018346dc122a1d94"
 
 [[package]]
 name = "memchr"
@@ -419,9 +391,9 @@ checksum = "b4596b6d070b27117e987119b4dac604f3c58cfb0b191112e24771b2faeac1a6"
 
 [[package]]
 name = "prettyplease"
-version = "0.2.31"
+version = "0.2.32"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5316f57387668042f561aae71480de936257848f9c43ce528e311d89a07cadeb"
+checksum = "664ec5419c51e34154eec046ebcba56312d5a2fc3b09a06da188e1ad21afadf6"
 dependencies = [
  "proc-macro2",
  "syn 2.0.100",
@@ -577,9 +549,9 @@ dependencies = [
 
 [[package]]
 name = "spin"
-version = "0.9.8"
+version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6980e8d7511241f8acf4aebddbb1ff938df5eebe98691418c4468d0b72a96a67"
+checksum = "d5fe4ccb98d9c292d56fec89a5e07da7fc4cf0dc11e156b41793132775d3e591"
 dependencies = [
  "lock_api",
 ]
@@ -638,12 +610,6 @@ name = "volatile"
 version = "0.4.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "442887c63f2c839b346c192d047a7c87e73d0689c9157b00b53dcc27dd5ea793"
-
-[[package]]
-name = "volatile"
-version = "0.5.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f05a5337d258c4ef40d920ffcc5a729278951d57e6596f8b62ca7d4827613e77"
 
 [[package]]
 name = "windows-targets"
@@ -727,5 +693,5 @@ dependencies = [
  "bit_field",
  "bitflags",
  "rustversion",
- "volatile 0.4.6",
+ "volatile",
 ]
